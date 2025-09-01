@@ -284,24 +284,138 @@ def batch_prediction(model, scaler):
 
 # ------------------- ABOUT PAGE -------------------
 def about_page():
-    st.subheader("ℹ️ About This App")
+    st.set_page_config(page_title="About - Credit Card Fraud Detection", layout="wide")
+    
+    st.title("ℹ️ About Credit Card Fraud Detection Dashboard")
+    
+    # App Overview
     st.markdown("""
-    This **Credit Card Fraud Detection Dashboard** helps analyze transactions for potential fraud.
+    ---
+    ## 🚀 Dashboard Overview
+    Welcome to the **Credit Card Fraud Detection Dashboard**, a modern, interactive tool designed to help detect suspicious activities in credit card transactions.  
+    Whether you want to analyze **a single transaction** or **bulk data**, this dashboard provides detailed insights through advanced visualizations.  
 
-    **Features**
-    - Real-time single transaction fraud prediction
-    - Bulk transaction analysis with CSV uploads
-    - Advanced visualizations: Fraud probability gauges, pie charts, histograms, trends
-    - Downloadable fraud prediction reports
-
-    **Dataset**
-    - Based on the popular Kaggle dataset
-    - Features: `Time`, `V1–V28` (PCA features), `Amount`
-    - Target: Fraud (1) or Legitimate (0)
-
-    ⚠️ *Disclaimer: For demonstration purposes only. Not for production banking use.*
+    **Key Features**
+    - 🔹 Real-time single transaction fraud prediction  
+    - 🔹 Bulk transaction analysis with CSV uploads  
+    - 🔹 Interactive visualizations: Fraud probability gauges, pie charts, histograms, trend lines  
+    - 🔹 Downloadable fraud prediction reports for easy sharing and compliance  
+    - 🔹 Insights on model confidence and feature importance
     """)
+    
+    # Theoretical Background
+    st.markdown("""
+    ---
+    ## 📚 Credit Card & Fraud Theoretical Background
+    ### What is a Credit Card?
+    A **credit card** is a payment card issued by financial institutions allowing users to borrow funds to pay for goods and services. It provides convenience, rewards, and financial flexibility.  
 
+    ### Types of Credit Card Fraud
+    Credit card fraud occurs when **unauthorized users gain access to a cardholder's information** and perform illegal transactions. Common types include:  
+    - **Stolen card data**: Using lost or stolen physical cards  
+    - **Counterfeit cards**: Cloning or creating fake cards  
+    - **Card-not-present (CNP) fraud**: Online or phone transactions  
+    - **Identity theft fraud**: Using someone’s personal info to obtain a credit card  
+
+    ### Impact of Credit Card Fraud
+    - 💳 Financial losses for consumers and banks  
+    - 🏦 Damage to banking credibility and trust  
+    - 💰 Increased operational costs for fraud prevention  
+    - ⚖️ Regulatory penalties for non-compliance in financial systems  
+
+    ### Why Fraud Detection Matters
+    Detecting fraud is **critical** to protect users and institutions. Advanced detection methods help:  
+    - Identify suspicious behavior patterns in real-time  
+    - Minimize financial losses  
+    - Ensure regulatory compliance  
+    - Improve customer trust and satisfaction  
+    """)
+    
+    # Importance of Machine Learning
+    st.markdown("""
+    ---
+    ## 🤖 Role of Machine Learning in Fraud Detection
+    Traditional rule-based systems are **limited** because fraud patterns evolve rapidly. Machine learning offers:  
+    - **Adaptive detection:** Learns from historical transactions  
+    - **Predictive power:** Detects anomalies before financial damage occurs  
+    - **Probabilistic scoring:** Assigns a likelihood of fraud for better decision-making  
+    - **Scalability:** Handles millions of transactions efficiently  
+
+    **Popular ML Techniques in Fraud Detection:**  
+    - Logistic Regression & Decision Trees  
+    - Random Forest & Gradient Boosting  
+    - Support Vector Machines (SVM)  
+    - Neural Networks & Deep Learning  
+    - Anomaly detection algorithms (Isolation Forest, Autoencoders)
+    """)
+    
+    # Dataset Info
+    st.markdown("""
+    ---
+    ## 🗄️ Dataset Overview
+    Our models are trained on the **Kaggle Credit Card Fraud dataset**:  
+    - Source: [Kaggle Credit Card Fraud Detection](https://www.kaggle.com/datasets/mlg-ulb/creditcardfraud)  
+    - Features: `Time`, `V1–V28` (PCA-transformed features), `Amount`  
+    - Target: `Class` — Fraud (1) or Legitimate (0)  
+
+    **Dataset Highlights**  
+    - Highly imbalanced: Fraud transactions are <0.2% of total data  
+    - Data anonymized for privacy  
+    - Suitable for demonstrating ML-based fraud detection
+    """)
+    
+    # Model Info
+    st.markdown("""
+    ---
+    ## 🧠 Model Information
+    Our dashboard uses **state-of-the-art machine learning models** trained on historical transaction data.  
+
+    **Model Highlights**  
+    - Handles imbalanced datasets with specialized techniques  
+    - Provides fraud probability scores for each transaction  
+    - Enables detailed insights through **interactive charts**  
+    - Continuous learning potential for evolving fraud patterns
+    """)
+    
+    # Developed By
+    st.markdown("""
+    ---
+    ## 👨‍💻 Developed By
+    **Dibyendu Karmahapatra**  
+    Passionate about **Data Science**, **Machine Learning**, and creating intuitive dashboards for **real-world applications**.  
+    This project reflects expertise in **Python, Streamlit, ML modeling, and data visualization**.
+    """)
+    
+    # Why Choose This Dashboard
+    st.markdown("""
+    ---
+    ## 🌟 Why Choose Our Dashboard?
+    - **Interactive & Modern UI:** Clear, responsive, and easy-to-navigate interface  
+    - **Advanced Visualizations:** Fraud probability gauges, histograms, pie charts, and trend lines  
+    - **Accurate Predictions:** ML models trained on real-world transaction data  
+    - **Educational Value:** Learn how fraud detection works and understand patterns in data  
+    - **Downloadable Reports:** Export predictions for documentation or analysis  
+    - **Secure & Privacy-Focused:** No personal card information stored
+    """)
+    
+    # Modern Extra Section (Optional Infographics / Tips)
+    st.markdown("""
+    ---
+    ## 📈 Quick Tips for Fraud Prevention
+    - Never share your card PIN or CVV  
+    - Enable two-factor authentication for online transactions  
+    - Monitor bank statements regularly  
+    - Use trusted and secure payment gateways  
+    - Report suspicious activity immediately to your bank
+    """)
+    
+    # Disclaimer
+    st.markdown("""
+    ---
+    ## ⚠️ Disclaimer
+    This application is for **educational and demonstration purposes only**.  
+    **Do NOT use it for real banking decisions or financial advice.**
+    """)
 # ------------------- RUN APP -------------------
 if __name__ == "__main__":
     main()
